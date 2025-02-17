@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ViMusic - Buscador de música Online
 
-## Getting Started
+![Captura de pantalla Api Spotify](./public/api-spotify.png)
+![Captura de pantalla Buscar](./public/search.png)
 
-First, run the development server:
+## Descripción
+ViMusic es un reproductor y buscador de música online que se construyo usando el framework `Nextjs v15`, `Typescript` y `Tailwindcss`; y por ultimo se esta usando la `API Spotify` para la búsqueda y la reproducción de la música.
 
+Cuenta con un **`buscador en tiempo real`**, solo tiene que poner el nombre de la música o el artista que desee y listo, sin la necesidad de hacer click en botones para buscar.
+
+## Empezando
+Primero clone el repositorio:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/keytelpumaylle/ViMusic.git
+```
+Finalmente instale las dependencias:
+```bash
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configurando
+Para poder configurar es necesario que se cree su cuenta en `Spotify Developer`, donde podrá obtener las credenciales, `ID_SPOTIFY` y el `CLIENT_SECRET`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Teniendo las credenciales, abra el archivo `src/api/autorizer.tsx` y pegue su id de Spotify:
+```typescript
+const SPOTIFY_CLIENT_ID: string = 'TU_ID_SPOTIFY'; 
+```
+Y por ultimo, abra el archivo `src/api/getToken.tsx` y pegue su id de spotify mas el Secret Spotify:
+```typescript
+client_id: 'Reemplaza con tu CLIENT ID de spotify',
+client_secret: 'Reemplaza con tu CLIENT_SECRET de spotify', 
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Listo
 
-## Learn More
+Ejecute el proyecto y solo necesita hacer click en `autorizar`, y listo.
 
-To learn more about Next.js, take a look at the following resources:
+![Captura de Pantalla Autorizar](./public/autorizer.png)
+![Captura de Pantalla Api](./public/api-spotify.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<div style="background-color: #FF404025; color: #FF4040; padding: 10px; border-left: 4px solid #c62828;">
+    <strong>Advertencia:</strong> 
+    Para poder reproducir las músicas, su cuenta de spotify tiene que ser premiun, de lo contrario no podrá reproducir las  músicas.
+    Pero SI PODRA BUSCAR LAS MUSICAS.
+</div>

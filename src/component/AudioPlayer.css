@@ -1,0 +1,270 @@
+/* Variables de colores para facilitar cambios y mejorar consistencia */
+:root {
+    --spotify-green: #1db954;
+    --spotify-dark: #121212;
+    --spotify-dark-muted: #181818;
+    --spotify-light: #fff;
+    --spotify-muted: #b3b3b3;
+    --spotify-muted-dark: #3a3a3a;
+    --spotify-border: #282828;
+  }
+  
+  /* Asegurarse de que no se afecta el header */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: var(--spotify-dark);
+    color: var(--spotify-light);
+    overflow-x: hidden; /* Evita que el contenido se desborde horizontalmente */
+  }
+  
+  /* Reproductor de audio - Contenedor principal */
+  .audio-player-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Ocupa todo el ancho de la pantalla */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    padding: 0;
+  }
+  
+  /* Estilos del contenedor del reproductor y playlist */
+  .audio-player-container {
+    display: flex;
+    width: 100%;
+    height: 100%; /* 90% de la altura de la pantalla */
+    background-color: var(--spotify-dark-muted);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  /* Sección del reproductor de audio */
+  .audio-player-left {
+    flex: 3; /* El reproductor ocupa el 66% del ancho */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 57px;
+  }
+  .audio-player-header{
+    background-color: var(--spotify-dark);
+    border-radius: 5px;
+    width: 350px;
+    height: 50px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  .audio-player-header:hover{
+    background-color: var(--spotify-green);
+    cursor: pointer;
+  }
+  .audio-player-header-button{
+    display: flex;
+    gap: 10px;
+  }
+
+  .input{
+    display: none;
+  }
+  
+  /* Imagen de portada */
+  .audio-player-image {
+    width: 350px;
+    height: 180px;
+    object-fit: cover;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 2px solid var(--spotify-green);
+  }
+  
+  /* Información de la canción (título, artista) */
+  .audio-player-info {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .audio-player-info h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--spotify-light);
+  }
+  
+  .audio-player-info p {
+    font-size: 1rem;
+    color: var(--spotify-muted);
+  }
+  
+  /* Barra de progreso */
+  .audio-player-progress {
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .audio-player-progress-bar {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background-color: var(--spotify-dark);
+    appearance: none;
+  }
+  
+  .audio-player-progress-bar::-webkit-progress-value {
+    background-color: var(--spotify-green);
+    border-radius: 3px;
+  }
+  
+  .audio-player-progress-bar::-webkit-progress-bar {
+    background-color: var(--spotify-dark-muted);
+  }
+  
+  /* Controles del reproductor */
+  .audio-player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 25px;
+  }
+  
+  .audio-player-button {
+    justify-items: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--spotify-dark);
+    border: none;
+    border-radius: 50%;
+    color: var(--spotify-light);
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .audio-player-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .audio-player-button.play-pause {
+    background-color: var(--spotify-green);
+  }
+  
+  .audio-player-button.play-pause:hover {
+    background-color: #1ed760;
+  }
+  
+  /* Sección de playlists */
+  .audio-player-right {
+    flex: 1; /* Las playlists ocupan el 33% del ancho */
+    padding: 20px;
+    background-color: var(--spotify-dark);
+    overflow-y: auto;
+    border-left: 2px solid var(--spotify-border);
+  }
+  
+  /* Creación de playlists */
+  .audio-player-playlist-creation {
+    background-color: var(--spotify-dark-muted);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  
+  .audio-player-playlist-creation input {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 1px solid var(--spotify-muted);
+    color: var(--spotify-light);
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border-radius: 4px;
+  }
+  
+  .audio-player-playlist-creation button {
+    padding: 12px;
+    width: 100%;
+    background-color: var(--spotify-green);
+    border: none;
+    border-radius: 4px;
+    color: var(--spotify-light);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .audio-player-playlist-creation button:hover {
+    background-color: #1ed760;
+  }
+  
+  /* Lista de playlists */
+  .audio-player-playlist-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .audio-player-playlist-item {
+    background-color: var(--spotify-dark-muted);
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .audio-player-playlist-item:hover {
+    background-color: var(--spotify-green);
+    transform: scale(1.05);
+  }
+  
+  .audio-player-playlist-item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--spotify-light);
+  }
+  
+  .audio-player-playlist-item ul {
+    font-size: 0.9rem;
+    color: var(--spotify-muted);
+    margin-top: 10px;
+  }
+  
+  .audio-player-playlist-item li {
+    margin-bottom: 8px;
+  }
+  
+  /* Botón para añadir a la playlist */
+  .audio-player-add-to-playlist {
+    padding: 12px;
+    background-color: var(--spotify-green);
+    color: var(--spotify-light);
+    border-radius: 4px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .audio-player-add-to-playlist:hover {
+    background-color: #1ed760;
+  }
+  
+  /* Asegurarse de que el header no sea afectado */
+  header {
+    position: relative;
+    z-index: 100;
+    padding: 20px;
+    background-color: var(--spotify-dark);
+    color: var(--spotify-light);
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  

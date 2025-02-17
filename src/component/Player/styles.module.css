@@ -1,0 +1,91 @@
+/* Estilos generales */
+.search {
+    background-color: #eaeaea;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centrar contenido */
+    padding: 20px;
+}
+
+/* Estilos de la grilla para los resultados de búsqueda */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Distribuir 5 columnas iguales */
+    gap: 15px; /* Aumento el espacio entre los elementos */
+    margin: 20px 30px 80px 30px;
+    grid-auto-rows: minmax(200px, auto); /* Asegurar que todas las celdas tengan una altura mínima */
+}
+
+/* Estilo de cada carta de track */
+.inner {
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #eaeaea;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s ease-in-out; /* Efecto suave al pasar el cursor */
+    overflow: hidden; /* Asegura que los elementos no se desborden */
+}
+
+.inner:hover {
+    background-color: #1DB954; /* Verde de Spotify */
+    transform: scale(1.05); /* Efecto de aumento al pasar por encima */
+}
+
+.inner:hover .play-button {
+    opacity: 1; /* Aparece el botón de play */
+}
+
+/* Imagen de cada track */
+.trackImage {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    transition: opacity 0.2s ease-in-out; /* Transición suave */
+}
+
+/* Botón de play en cada carta, inicialmente oculto */
+.play-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.play-button svg {
+    fill: white;
+    width: 40px;
+    height: 40px;
+}
+
+/* Estilos del reproductor de Spotify fijo en la parte inferior */
+.spotifyPlayer {
+    position: fixed;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que el reproductor siempre esté encima de otros elementos */
+    padding: 10px 0;
+}
