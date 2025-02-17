@@ -21,11 +21,11 @@ npm install
 ## Configurando
 Para poder configurar es necesario que se cree su cuenta en `Spotify Developer`, donde podrá obtener las credenciales, `ID_SPOTIFY` y el `CLIENT_SECRET`.
 
-Teniendo las credenciales, abra el archivo `src/api/autorizer.tsx` y pegue su id de Spotify:
+Teniendo las credenciales, abra el archivo `src/app/api/autorizer.tsx` y pegue su id de Spotify:
 ```typescript
 const SPOTIFY_CLIENT_ID: string = 'TU_ID_SPOTIFY'; 
 ```
-Y por ultimo, abra el archivo `src/api/getToken.tsx` y pegue su id de spotify mas el Secret Spotify:
+Y por ultimo, abra el archivo `src/app/api/getToken.tsx` y pegue su id de spotify mas el Secret Spotify:
 ```typescript
 client_id: 'Reemplaza con tu CLIENT ID de spotify',
 client_secret: 'Reemplaza con tu CLIENT_SECRET de spotify', 
@@ -40,6 +40,6 @@ Ejecute el proyecto y solo necesita hacer click en `autorizar`, y listo.
 
 <div style="background-color: #FF404025; color: #FF4040; padding: 10px; border-left: 4px solid #c62828;">
     <strong>Advertencia:</strong> 
-    Para poder reproducir las músicas, su cuenta de spotify tiene que ser premiun, de lo contrario no podrá reproducir las  músicas.
+    Para poder reproducir las músicas, su cuenta de spotify tiene que ser premiun, de lo contrario no podrá reproducirlas;
     Pero SI PODRA BUSCAR LAS MUSICAS.
 </div>
